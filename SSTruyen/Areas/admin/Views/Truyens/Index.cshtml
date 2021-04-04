@@ -1,0 +1,84 @@
+﻿@model IEnumerable<SSTruyen.Models.Truyen>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center;">Danh sách truyện</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới truyện", "Create")
+</p>
+<div style="width:95%">
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.IDTruyen)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tentruyen)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tacgia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nguon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.trangthai)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.yeuthich)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.gioithieu)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.anh)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IDTruyen)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tentruyen)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tacgia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nguon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.trangthai)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.yeuthich)
+                    </td>
+                    <td>
+                        <textarea disabled rows="3" cols="20">  
+                            @Html.DisplayFor(modelItem => item.gioithieu)
+                         </textarea>
+
+                    </td>
+                    <td>
+                        <div>@Html.DisplayFor(modelItem => item.anh)</div>
+                        
+                    </td>
+                    <td>
+                        @Html.ActionLink("Sửa", "Edit", new { id = item.IDTruyen }) |
+                        @Html.ActionLink("Chi tiết", "Details", new { id = item.IDTruyen }) |
+                        @Html.ActionLink("Xoá", "Delete", new { id = item.IDTruyen })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

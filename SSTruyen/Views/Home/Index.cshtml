@@ -1,0 +1,83 @@
+﻿@model SSTruyen.Models.ChapTruyen
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section listTheLoai
+{
+    @foreach (var item in ViewBag.listTheLoai)
+    {
+        <a class="dropdown-item" href="/Home/theloai/@item.IDtheloai">@item.theloai1</a>
+    }
+}
+<!-- bread -->
+<div class="row">
+    <div class="col-md-6">
+        <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/Home">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        Trang chủ
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!--end bread  -->
+<!-- Top Book -->
+<div class="row row-title">
+    <div class="grid-item">
+        @foreach (var item in ViewBag.listTruyen)
+        {
+            <div class="card text-center " style="width: 200px;height: 260px;">
+                <a href="/Home/Truyen/@item.IDTruyen"><img class="card-img-top" src="/assets/image/@item.anh"></a>
+                <div class="card-body">
+                    <a class="card-text" href="/Home/Truyen/@item.IDTruyen"><h6>@item.tentruyen</h6></a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<br>
+<br>
+<hr>
+<!-- New Book -->
+<div class="row row-title">
+    <div class="col-md-8">
+        <br>
+        <p class="h3">Chương mới cập nhập</p>
+        <table class="table">
+            <tr>
+                <th>Tên truyện</th>
+                <th>Tên Chương</th>
+            </tr>
+            
+            @foreach (var item in ViewBag.listNew)
+            {
+                <tr>
+                    <td style="color:darkolivegreen">@item.noidung</td>
+                    <td><a href="/Home/Chap/@item.stt">@item.tenchap</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-md-4">
+        <div class="homeGenresList">
+            <p class="h3">Top Truyện hay</p>
+            <table class="table" id="tableListTop">
+                @foreach (var item in ViewBag.listHot)
+                {
+                <tr>
+                    <td><a href="/Home/Truyen/@item.IDTruyen"><h5>@item.tentruyen</h5></a></td>
+                </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+<hr>
+

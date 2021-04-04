@@ -1,0 +1,33 @@
+﻿@model SSTruyen.Models.Truyen
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center;">@Html.DisplayFor(model => model.tentruyen)</h2>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                Tên thể loại
+            </th>
+        </tr>
+    @foreach (var item in ViewBag.listTheLoai)
+    {
+        <tr>
+            <td>
+                @item
+            </td>
+            <td>
+                @Html.ActionLink("Xoá", "Delete", new { tentruyen = Model.tentruyen, theloai = item })
+
+            </td>
+        </tr>
+    }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

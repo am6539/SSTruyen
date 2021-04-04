@@ -1,0 +1,60 @@
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+  }
+.breadcrumb {
+    background-color: white;
+}
+#SelectCategory{
+    width: 130px;
+    margin-left: 60%;
+}
+#HotBook{
+    background-image: url("/assets/img/church.png");
+    background-size: 100px;
+    color: #262626;
+    border: 6px solid #b0aca7;
+    padding: 60px 64px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card img{
+    width: 200px;
+    height: 260px;
+}
+.card{
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+.grid-item{
+    margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.homeGenresList{
+    background: #faf5eb url(/assets/img/church.png) 0 0 repeat;
+    background-size: auto;
+    background-size: 100px;
+    color: #262626;
+    border: 1px solid #b0aca7;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.wiki-content{
+    background: #faf5eb url(/assets/img/church.png) 0 0 repeat;
+    background-size: 100px;
+    color: #262626;
+    border: 6px solid #b0aca7;
+    padding: 60px 64px;
+    margin-left: auto;
+    margin-right: auto;
+}
+

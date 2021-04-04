@@ -1,0 +1,103 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSTruyen</title>
+    <link href="/Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Assets/bootstrap/css/now-ui-kit.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Assets/css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- script file here -->
+    <script src="https://kit.fontawesome.com/b25c098ab1.js" crossorigin="anonymous"></script>
+    <script src="/Assets/bootstrap/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="/Assets/bootstrap/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="/Assets/bootstrap/js/core/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/Assets/bootstrap/js/now-ui-kit.js" type="text/javascript"></script>
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="/"><img src="/Assets/img/sstruyen_logo.svg"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <ul class="navbar-nav mb-0 h5">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+                            Danh sách
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <!-- Danh sách Truyện -->
+                            <a class="dropdown-item" href="/Home/hot">Truyện Hot</a>
+                            <a class="dropdown-item" href="/Home/new">Truyện mới</a>
+                            <a class="dropdown-item" href="/Home/full">Truyện full</a>
+                        </div>
+                    </li>
+                    <span class="navbar-toggler-icon"></span>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list" aria-hidden="true"></i>
+                            Thể loại
+                        </a>
+                        <div class="dropdown-menu" id="ListTheLoai" aria-labelledby="navbarDropdownMenuLink">
+                            <!-- Thể loại truyện -->
+                            @RenderSection("listTheLoai",required:false)
+
+                        </div>
+                    </li>
+                    <span class="navbar-toggler-icon"></span>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Lọc truyện</a>
+                    </li>
+                </ul>
+                <form class="form-inline ml-auto" data-background-color method="get" action="/find">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Tìm kiếm">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- MainBody -->
+    <div class="container-fluid">
+        @RenderBody()
+        <!-- Footer -->
+        <div class="container-fluid text-center bg-primary">
+            <div class="row">
+                <div class="col-md-2">
+                    <a class="navbar-brand" href="/"><img src="/Assets/img/sstruyen_logo.svg"></a>
+                </div>
+                <div class="col-md-10">
+                    <p class="h5 text-white">
+                        SSTruyen - Đọc truyện online, đọc truyện chữ, truyện hay. Website luôn cập nhật những bộ truyện mới thuộc các thể loại đặc sắc như truyện tiên hiệp, truyện kiếm hiệp, hay truyện ngôn tình một cách nhanh nhất. Hỗ trợ mọi trình duyệt.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

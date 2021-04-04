@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Truyen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section listTheLoai
+{
+    @foreach (var item in ViewBag.listTheLoai)
+    {
+<a class="dropdown-item" href="/Home/theloai/@item.IDtheloai">@item.theloai1</a>
+    }
+}
+<div class="row">
+    <div class="col-md-6">
+        <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        Trang chủ
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">@ViewBag.truyen.tentruyen</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="card" style="margin-left: -1px;">
+    <div class="card-body">
+        <blockquote class="blockquote blockquote-primary mb-0">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/assets/image/@ViewBag.truyen.anh" style="margin-top: 80px;margin-left: 50px;width:300px; height: 380px;">
+                </div>
+                <div class="col-md-8">
+                    <h3 style="color: black;">@ViewBag.truyen.tentruyen</h3>
+                    <p class="h6" style="color: rgb(255, 136, 0);">Lượt yêu thích: @ViewBag.truyen.yeuthich</p>
+                    <form action="/like/@ViewBag.truyen.IDTruyen" method="get">
+                        <button class="btn btn-primary btn-icon btn-round" type="submit">
+                            <i class="now-ui-icons ui-2_favourite-28"></i>
+                        </button>
+                    </form>
+                    <div class="card" style="margin-left: -1px; background-color: lightgray;">
+                        <div class="card-body">
+                            <p style="color: darkslategray;">Tác giả: @ViewBag.truyen.tacgia</p>
+                            <p style="color: darkslategray;">
+                                Thể loại:@ViewBag.theloai
+                            </p>
+                            <p style="color: darkslategray;">Nguồn: @ViewBag.truyen.nguon</p>
+                            <p style="color: darkslategray;">Trạng thái: @ViewBag.truyen.trangthai</p>
+                            <div>
+                                <span style="white-space: pre-line; font-size:medium;line-height: 1.8;color:black">@ViewBag.truyen.gioithieu</span>                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </blockquote>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="listChuong" style="background-color: cornsilk;max-height: 400px;">
+            <h4 style="text-align: center;">Danh sách chương</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        @foreach (var item in ViewBag.listChap)
+                        {
+                            <tr>
+                                <td style="text-align: center;"><a href="/Home/chap/@item.stt">@item.tenchap</a></td>
+                            </tr>
+                        }
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-2"></div>
+<hr>
+

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<SSTruyen.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách tài khoản</h2>
+
+<p>
+    @Html.ActionLink("Tạo tài khoản", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.username)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.password)
+    </td>
+    <td>
+        @Html.ActionLink("Sửa", "Edit", new { id = item.username }) |
+        @Html.ActionLink("Chi tiết", "Details", new { id = item.username }) |
+        @Html.ActionLink("Xoá", "Delete", new { id = item.username })
+    </td>
+</tr>
+}
+
+</table>

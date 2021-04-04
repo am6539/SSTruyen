@@ -1,0 +1,45 @@
+﻿@model SSTruyen.Models.ChapTruyen
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.tentruyen</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.chap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tenchap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.noidung)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (ChapTruyen item in ViewBag.listChap)
+    {
+        <tr>
+            <td>
+                @item.chap
+            </td>
+            <td>
+                @item.tenchap
+            </td>
+            <td>
+                <textarea disabled rows="3" cols="20">  
+              @item.noidung
+        </textarea>
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.stt })|
+                @Html.ActionLink("Xoá", "Delete", new { id = item.stt })
+            </td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Quay lại",  "Index")

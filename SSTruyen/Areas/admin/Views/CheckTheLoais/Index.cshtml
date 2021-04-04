@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SSTruyen.Models.Truyen>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center;">Danh sách truyện</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tentruyen)
+        </th>
+        <th>
+            Thể loại
+        </th>
+        <th>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.tentruyen)
+    </td>
+    <td>
+        @Html.ActionLink("Chi tiết", "Details", new { id = item.IDTruyen })
+       
+    </td>
+    <td>
+        @Html.ActionLink("Thêm thể loại", "Create")
+    </td>
+</tr>
+    }
+
+</table>

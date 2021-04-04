@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Chap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section listTheLoai
+{
+    @foreach (var item in ViewBag.listTheLoai)
+    {
+        <a class="dropdown-item" href="/Home/theloai/@item.IDtheloai">@item.theloai1</a>
+    }
+}
+<div class="row">
+    <div class="col-md-6">
+        <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        Trang chủ
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/Home/Truyen/@ViewBag.idtruyen">
+                        @ViewBag.tentruyen
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">@ViewBag.chap.tenchap</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="container">
+    <div class="wiki-content" style="
+        background: #faf5eb url(/assets/img/church.png) 0 0 repeat;
+        background-size: 100px;
+        color: #262626;
+        border: 6px solid #b0aca7;
+        padding: 40px 40px;
+        margin-left: auto;
+        margin-right: auto;
+    ">
+        <h3>@ViewBag.chap.tenchap</h3>
+        <span style="white-space: pre-line; font-size:medium;line-height: 1.8;">@ViewBag.chap.noidung</span>
+    </div>
+</div>
+<hr>
+

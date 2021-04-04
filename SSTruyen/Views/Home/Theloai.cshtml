@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Theloai";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section listTheLoai
+{
+    @foreach (var item in ViewBag.listTheLoai)
+    {
+        <a class="dropdown-item" href="/Home/theloai/@item.IDtheloai">@item.theloai1</a>
+    }
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/Home">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        Trang chủ
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="row row-title">
+    <div class="grid-item">
+        @foreach (var item in ViewBag.listTruyen)
+        {
+            <div class="card text-center " style="width: 200px;height: 260px;">
+                <a href="/Home/Truyen/@item.IDTruyen"><img class="card-img-top" src="/assets/image/@item.anh"></a>
+                <div class="card-body">
+                    <a class="card-text" href="/Home/Truyen/@item.IDTruyen"><h6>@item.tentruyen</h6></a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<br>
+

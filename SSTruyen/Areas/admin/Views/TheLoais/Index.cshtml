@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SSTruyen.Models.TheLoai>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center;"> Danh sách thể loại</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDtheloai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.theloai1)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.IDtheloai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.theloai1)
+    </td>
+    <td>
+        @Html.ActionLink("Sửa", "Edit", new { id = item.IDtheloai }) |
+        @Html.ActionLink("Xoá", "Delete", new { id = item.IDtheloai })
+    </td>
+</tr>
+}
+
+</table>
